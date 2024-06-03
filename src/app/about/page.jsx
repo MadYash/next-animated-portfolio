@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
+import ExperienceBox from "@/components/ExperienceBox";
+import Brain from "@/components/Brain";
 
 const skillsArr = [
   "HTML",
@@ -18,6 +20,8 @@ const skillsArr = [
 ];
 
 const AboutPage = () => {
+    const containerRef = useRef();
+    const {scrollYProgress} = useScroll({container:containerRef})
     return (
     <motion.div
       className="h-full"
@@ -27,9 +31,9 @@ const AboutPage = () => {
     >
      
       {/*Container  */}
-      <div className=" h-full overflow-scroll">
+      <div className=" h-full overflow-y-scroll lg:flex" ref={containerRef}>
         {/* Text Container */}
-        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-36 lg:gap-48 xl:gap-60">
+        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-36 lg:gap-48 xl:gap-60 lg:w-2/3 lg:pr-0 xl:w-1/2">
           {/* Biography Container */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIO TITLE */}
@@ -129,51 +133,12 @@ const AboutPage = () => {
               />
             </svg>
           </div>
-          {/* Experience Container */}
-
-          <div className="flex flex-col gap-12 justify-center pb-48">
-            {/* Experience Title */}
-            <h1 className="font-bold text-2xl">Experience</h1>
-            {/* Experience List */}
-            <div>
-              {/* Experience List Item */}
-              <div className="flex justify-between h-48">
-                {/* Left */}
-                <div className="w-1/3">
-                  {/* JOB title */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Software Developer
-                  </div>
-                  {/* JOB Desc */}
-                  <div className="p-3 text-sm italic">
-                    Worked as a software developer in the field of react js &
-                    next js
-                  </div>
-                  {/* Job Date */}
-                  <div className="p-3 font-semibold text-red-400 text-sm">
-                    July 22 - Nov 23
-                  </div>
-                  {/* Company Name */}
-                  <div className="p-1 text-sm font-semibold rounded bg-white w-fit">
-                    Virtual Employee Pvt Ltd
-                  </div>
-                </div>
-                {/* Center */}
-                <div className="w-1/6">
-                  {/* Line */}
-                  <div className="w-1 h-full relative rounded bg-gray-600">
-                    {/* Line Circle */}
-                    <div className="absolute bg-white ring-4 rounded-full ring-red-400 w-5 h-5 -left-2"></div>
-                  </div>
-                </div>
-                {/* Right */}
-                <div className="w-1/3"></div>
-              </div>
-            </div>
-          </div>
+         <ExperienceBox/>
         </div>
         {/* SVG Container */}
-        <div className="hidden"></div>
+        <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
+            <Brain scrollYProgress={scrollYProgress}/>
+        </div>
       </div>
     </motion.div>
   );

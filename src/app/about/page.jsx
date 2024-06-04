@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import ExperienceBox from "@/components/ExperienceBox";
 import Brain from "@/components/Brain";
@@ -20,16 +20,17 @@ const skillsArr = [
 ];
 
 const AboutPage = () => {
-    const containerRef = useRef();
-    const {scrollYProgress} = useScroll({container:containerRef})
-    return (
+  const containerRef = useRef();
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const skillRef = useRef();
+  const isSkillInView = useInView(skillRef, { margin: "-100px" });
+  return (
     <motion.div
       className="h-full"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-     
       {/*Container  */}
       <div className=" h-full overflow-y-scroll lg:flex" ref={containerRef}>
         {/* Text Container */}
@@ -54,12 +55,15 @@ const AboutPage = () => {
               {/* <Image src={"/signature.png"} alt="signature" fill /> */}
             </div>
             {/* Scroll SVG */}
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="80px"
               height="80px"
               viewBox="0 0 24 24"
               fill="none"
+              initial={{opacity:0.2,y:"0"}}
+              animate={{opacity:1,y:"10px"}}
+              transition={{duration:3, ease:"easeInOut",repeat:Infinity}}
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -82,15 +86,24 @@ const AboutPage = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-            </svg>
+            </motion.svg>
           </div>
 
           {/* Skills Container */}
-          <div className="flex flex-col gap-12 justify-center">
+          <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
             {/* SKill Title */}
-            <h1 className=" font-bold text-2xl">Skills</h1>
+            <motion.h1
+              initial={{ x: "-300px" }}
+              animate={isSkillInView ? { x: "0px" } : {}}
+              transition={{ delay: 0.3 }}
+              className=" font-bold text-2xl"
+            >
+              Skills
+            </motion.h1>
             {/* Skill List */}
-            <div className="flex flex-wrap gap-4">
+            <motion.div className="flex flex-wrap gap-4"
+            initial={{ x: "-300px" }}
+            animate={isSkillInView ? { x: "0px" } : {}}>
               {skillsArr?.map((skill, inx) => {
                 return (
                   <div
@@ -101,14 +114,17 @@ const AboutPage = () => {
                   </div>
                 );
               })}
-            </div>
+            </motion.div>
             {/* scroll svg */}
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="80px"
               height="80px"
               viewBox="0 0 24 24"
               fill="none"
+              initial={{opacity:0.2,y:"0"}}
+              animate={{opacity:1,y:"10px"}}
+              transition={{duration:3, ease:"easeInOut",repeat:Infinity}}
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -131,13 +147,13 @@ const AboutPage = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-            </svg>
+            </motion.svg>
           </div>
-         <ExperienceBox/>
+          <ExperienceBox />
         </div>
         {/* SVG Container */}
         <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
-            <Brain scrollYProgress={scrollYProgress}/>
+          <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>

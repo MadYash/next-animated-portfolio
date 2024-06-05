@@ -24,7 +24,7 @@ const ExperienceBox = () => {
         animate={expRefInView ? { x: "0px" } : {}}
         >
           {/* Experience List Item */}
-          <div className="flex justify-between h-48">
+          <div className="flex justify-between sm:h-48 h-screen">
             {/* Left */}
             <div className="w-1/3">
               {/* JOB title */}
@@ -59,7 +59,7 @@ const ExperienceBox = () => {
             {/* Right */}
             <div className="w-1/3"></div>
           </div>
-          <div className="flex justify-between h-48">
+          <div className="flex justify-between sm:h-48 h-screen">
             {/* Left */}
             <div className="w-1/3"></div>
             {/* Center */}
@@ -91,7 +91,7 @@ const ExperienceBox = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between h-48">
+          <div className="flex justify-between sm:h-48 h-screen">
             {/* Left */}
             <div className="w-1/3">
               {/* JOB title */}

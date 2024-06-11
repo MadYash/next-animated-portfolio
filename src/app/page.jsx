@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { motion, useScroll } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Homepage = () => {
   const { scrollYProgress } = useScroll();
+  const router = useRouter()
 
   return (
     <>
@@ -46,10 +48,10 @@ const Homepage = () => {
             </p>
             {/* Buttons */}
             <div className="flex gap-4 w-full">
-              <button className="rounded-lg p-4 ring ring-black bg-black text-white">
+              <button className="rounded-lg p-4 ring ring-black bg-black text-white" onClick={()=>router.push("/portfolio")}>
                 View My Work
               </button>
-              <button className="rounded-lg p-4 ring ring-black">
+              <button className="rounded-lg p-4 ring ring-black" onClick={()=>router.push("/contact")}>
                 Contact Me
               </button>
             </div>

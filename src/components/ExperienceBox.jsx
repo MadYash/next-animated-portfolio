@@ -24,7 +24,7 @@ const ExperienceBox = () => {
         animate={expRefInView ? { x: "0px" } : {}}
         >
           {/* Experience List Item */}
-          <div className="flex justify-between sm:h-48 h-screen">
+          <div className="flex justify-between h-48 lg:h-60 xl:h-96">
             {/* Left */}
             <div className="w-1/3">
               {/* JOB title */}
@@ -32,7 +32,7 @@ const ExperienceBox = () => {
                 Frontend Developer
               </div>
               {/* JOB Desc */}
-              <div className="p-3 text-sm italic">
+              <div className="p-3 text-sm italic hidden lg:block">
                 Working as a Frontend Developer in the field of React js having
                 strong knowledge in the domain of the HTML, CSS , Javascript,
                 React JS, Next JS, Bootstrap, Tailwind, Framer motion and other
@@ -59,7 +59,7 @@ const ExperienceBox = () => {
             {/* Right */}
             <div className="w-1/3"></div>
           </div>
-          <div className="flex justify-between sm:h-48 h-screen">
+          <div className="flex justify-between h-48 lg:h-60 xl:h-96 ">
             {/* Left */}
             <div className="w-1/3"></div>
             {/* Center */}
@@ -77,7 +77,7 @@ const ExperienceBox = () => {
                 Software Developer
               </div>
               {/* JOB Desc */}
-              <div className="p-3 text-sm italic">
+              <div className="p-3 text-sm italic hidden lg:block">
                 Worked as a software developer in the field of react js & next
                 js
               </div>
@@ -91,7 +91,7 @@ const ExperienceBox = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between sm:h-48 h-screen">
+          <div className="flex justify-between h-48 lg:h-60 xl:h-96">
             {/* Left */}
             <div className="w-1/3">
               {/* JOB title */}
@@ -99,7 +99,7 @@ const ExperienceBox = () => {
                 Internship
               </div>
               {/* JOB Desc */}
-              <div className="p-3 text-sm italic">
+              <div className="p-3 text-sm italic hidden lg:block">
                 Worked as a software developer intern in the field of HTML, CSS,
                 JavaScript & bootstrap
               </div>

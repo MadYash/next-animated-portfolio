@@ -19,7 +19,7 @@ const Homepage = () => {
         animate={{ y: "0%" }}
         transition={{ duration: 1 }}
       >
-        <div className="flex flex-col h-full lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ">
+        <div className="flex flex-col h-[120vh] lg:h-full lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ">
           {/* Image Container */}
           <div className="h-1/2 lg:h-full lg:w-1/2 relative">
             <Image

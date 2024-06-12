@@ -11,6 +11,7 @@ const Contact = () => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log('form values',form.current.name)
     setErrorsMsg(false);
     setSuccessMsg(false);
     emailjs
@@ -73,6 +74,7 @@ const Contact = () => {
           <label htmlFor="user_message">
             <textarea
               rows={2}
+              required
               className=" w-full bg-transparent border-b-2 border-b-black outline-none resize-none"
               name="user_message"
               id="user_message"
@@ -83,6 +85,7 @@ const Contact = () => {
             type="email"
             name="user_email"
             id="email"
+            required
             className=" bg-transparent border-b-2 border-b-black outline-none"
           />
           <span>Regards</span>

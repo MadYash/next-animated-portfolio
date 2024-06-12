@@ -8,18 +8,18 @@ const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "NCR Rugby",
+    desc: "The project involved  an interactive events calendar, real-time updates on match scores, and a streamlined registration system for teams and players. Ensured the site is responsive and accessible across various devices, providing a seamless experience for users seeking information on collegiate rugby in the United States.",
+    img: "/ncrrugby.png",
+    link: "https://www.ncr.rugby/",
   },
   {
     id: 2,
     color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "UWA MegaMove",
+    desc: "This project involved the global conservation of marine megafauna. Key features include a detailed data portal for tracking marine species, interactive maps, and collaborative tools for researchers. The website is designed to be responsive and accessible, facilitating the efforts of marine ecologists worldwide.",
+    img: "/megamove.jpg",
+    link: "https://megamove.org/",
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
+                <div className="flex flex-col gap-8 text-white lg:h-full">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
@@ -83,8 +83,8 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center mt-4">
-        <h1 className="text-8xl mt-12">Do you have a project?</h1>
+      <div className="w-screen h-screen flex flex-col gap-4 md:gap-8 lg:gap-16 items-center justify-center text-center mt-4 md:mt-8 lg:mt-16">
+        <h1 className="text-3xl md:text-6xl lg:text-8xl mt-12">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}

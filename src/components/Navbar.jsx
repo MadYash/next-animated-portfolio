@@ -13,6 +13,15 @@ const links = [
   { url: "/contact", title: "Contact" },
 ];
 
+const socialLinks = [
+  {url:"https://github.com/MadYash",src:"/github.png"},
+  {url:"/",src:"/dribbble.png"},
+  {url:"https://www.instagram.com/yash_madridista_7/",src:"/instagram.png"},
+  {url:"/",src:"/facebook.png"},
+  {url:"/",src:"/pinterest.png"},
+  {url:"https://www.linkedin.com/in/yash-sharma-079a33202?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",src:"/linkedin.png"},
+]
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -90,24 +99,16 @@ const Navbar = () => {
       </div>
       {/* SOCIAL */}
       <div className="hidden md:flex gap-4 w-1/3">
-        <Link href="/">
-          <Image src="/github.png" alt="" width={24} height={24} />
+      {socialLinks.map((item)=>{
+        return (
+
+          <Link href={item?.url} target="_blank">
+          <Image src={item?.src} alt="" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/dribbble.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="/">
-          <Image src="/instagram.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="/">
-          <Image src="/facebook.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="/">
-          <Image src="/pinterest.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="/">
-          <Image src="/linkedin.png" alt="" width={24} height={24} />
-        </Link>
+        )
+      })}
+       
+       
       </div>
       {/* RESPONSIVE MENU */}
       <div className="md:hidden">

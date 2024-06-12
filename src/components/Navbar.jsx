@@ -99,10 +99,10 @@ const Navbar = () => {
       </div>
       {/* SOCIAL */}
       <div className="hidden md:flex gap-4 w-1/3">
-      {socialLinks.map((item)=>{
+      {socialLinks.map((item,inx)=>{
         return (
 
-          <Link href={item?.url} target="_blank">
+          <Link href={item?.url} target="_blank" key={inx}>
           <Image src={item?.src} alt="" width={24} height={24} />
         </Link>
         )

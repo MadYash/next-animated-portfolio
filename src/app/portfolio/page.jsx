@@ -3,7 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-
+import { Rochester, Kodchasan, Philosopher } from "next/font/google";
+const rock = Rochester({ subsets: ["latin"], weight: "400" });
+const kodchasan = Kodchasan({ subsets: ["latin"], weight: "400" });
+const philospher = Philosopher({ subsets: ["latin"], weight: "400" });
 const items = [
   {
     id: 1,
@@ -53,7 +56,9 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
+        <div
+          className={`w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center ${rock.className}`}
+        >
           My Works
         </div>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
@@ -65,17 +70,30 @@ const PortfolioPage = () => {
                 key={item.id}
               >
                 <div className="flex flex-col gap-8 text-white lg:h-full">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                  <h1
+                    className={`text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl ${philospher.className}`}
+                  >
                     {item.title}
                   </h1>
                   <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
                     <Image src={item.img} alt="" fill />
                   </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+                  <p
+                    className={`w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] ${kodchasan.className}`}
+                  >
                     {item.desc}
                   </p>
                   <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
+                    <motion.button
+                      className="p-1 text-sm md:p-2 md:text-md lg:p- lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded"
+                      whileHover={{
+                        scale: 1.2,
+                        transition: { duration: 1 },
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      See Demo
+                    </motion.button>
                   </Link>
                 </div>
               </div>
@@ -84,7 +102,9 @@ const PortfolioPage = () => {
         </div>
       </div>
       <div className="w-screen h-screen flex flex-col gap-4 md:gap-8 lg:gap-16 items-center justify-center text-center mt-4 md:mt-8 lg:mt-16">
-        <h1 className="text-3xl md:text-6xl lg:text-8xl mt-12">Do you have a project?</h1>
+        <h1 className={`text-3xl md:text-6xl lg:text-8xl mt-12  ${rock.className}`}>
+          Do you have a project?
+        </h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}

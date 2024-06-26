@@ -2,10 +2,10 @@
 
 import React, { useRef } from "react";
 import { motion, useInView, useScroll } from "framer-motion";
-import Image from "next/image";
 import ExperienceBox from "@/components/ExperienceBox";
 import Brain from "@/components/Brain";
-
+import { Kodchasan } from "next/font/google";
+import { BiographyDesc } from "@/components/BiographyDesc";
 const skillsArr = [
   "HTML",
   "CSS",
@@ -18,6 +18,7 @@ const skillsArr = [
   "REDUX",
   "REDUX TOOLKIT",
 ];
+const kodchasan = Kodchasan({ subsets: ["latin"], weight: "400" });
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -40,12 +41,9 @@ const AboutPage = () => {
             {/* BIO TITLE */}
             <h1 className=" font-bold text-2xl">Biography</h1>
             {/* Biography desc */}
-            <p className="text-lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum,
-              quasi quisquam. Exercitationem vel ullam magni commodi sunt minus
-              neque facere eos! Saepe doloremque perspiciatis, suscipit impedit
-              praesentium iure neque necessitatibus!
-            </p>
+            <div className={`text-lg ${kodchasan.className}`}>
+              <BiographyDesc />
+            </div>
             {/* Biography Quote */}
             <span className="italic">
               Lorem ipsum dolor sit amet consectetur{" "}
@@ -61,30 +59,30 @@ const AboutPage = () => {
               height="80px"
               viewBox="0 0 24 24"
               fill="none"
-              initial={{opacity:0.2,y:"0"}}
-              animate={{opacity:1,y:"10px"}}
-              transition={{duration:3, ease:"easeInOut",repeat:Infinity}}
+              initial={{ opacity: 0.2, y: "0" }}
+              animate={{ opacity: 1, y: "10px" }}
+              transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12 6V14"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M15 11L12 14L9 11"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </motion.svg>
           </div>
@@ -101,9 +99,11 @@ const AboutPage = () => {
               Skills
             </motion.h1>
             {/* Skill List */}
-            <motion.div className="flex flex-wrap gap-4"
-            initial={{ x: "-300px" }}
-            animate={isSkillInView ? { x: "0px" } : {}}>
+            <motion.div
+              className="flex flex-wrap gap-4"
+              initial={{ x: "-300px" }}
+              animate={isSkillInView ? { x: "0px" } : {}}
+            >
               {skillsArr?.map((skill, inx) => {
                 return (
                   <div
@@ -122,30 +122,30 @@ const AboutPage = () => {
               height="80px"
               viewBox="0 0 24 24"
               fill="none"
-              initial={{opacity:0.2,y:"0"}}
-              animate={{opacity:1,y:"10px"}}
-              transition={{duration:3, ease:"easeInOut",repeat:Infinity}}
+              initial={{ opacity: 0.2, y: "0" }}
+              animate={{ opacity: 1, y: "10px" }}
+              transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12 6V14"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M15 11L12 14L9 11"
                 stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </motion.svg>
           </div>

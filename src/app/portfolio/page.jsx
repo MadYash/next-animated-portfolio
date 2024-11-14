@@ -27,10 +27,10 @@ const items = [
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "SOS New Mexico",
+    desc: "This project is built for mexico government to conduct the elections and contestants to sign the petitions for the candidate. E-sign, candidate list, candidate signup feature all are done here. Apart from this admin portal is also there where admin has all the crud functionality.",
+    img: "/sosmexico.jpg",
+    link: "https://www.sos.nm.gov/",
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ const PortfolioPage = () => {
                   >
                     {item.desc}
                   </p>
-                  <Link href={item.link} className="flex justify-end">
+                  <Link href={item.link} className="flex justify-end" target="_blank">
                     <motion.button
                       className="p-1 text-sm md:p-2 md:text-md lg:p- lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded"
                       whileHover={{

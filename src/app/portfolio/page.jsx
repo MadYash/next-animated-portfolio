@@ -30,7 +30,7 @@ const items = [
     title: "SOS New Mexico",
     desc: "This project is built for mexico government to conduct the elections and contestants to sign the petitions for the candidate. E-sign, candidate list, candidate signup feature all are done here. Apart from this admin portal is also there where admin has all the crud functionality.",
     img: "/sosmexico.jpg",
-    link: "https://www.sos.nm.gov/",
+    link: "https://www.electronicpetitions.elections.sos.nm.gov/",
   },
   {
     id: 4,

@@ -9,8 +9,8 @@ const TransitionProvider = ({ children }) => {
   return (
     <>
       <AnimatePresence mode="wait">
-        <div key={pathName} className="w-screen h-[150vh] lg:h-screen bg-gradient-to-b from-blue-100 to-red-100 ">
-          <div className="h-24">
+        <div key={pathName} className=" lg:h-screen bg-gradient-to-b from-blue-100 to-red-100 ">
+          <div className=" p-4 ">
           <motion.div
             className="h-screen w-screen fixed bg-black z-20 rounded-b-[100px]"
             animate={{ height: "0vh" }}
@@ -34,7 +34,9 @@ const TransitionProvider = ({ children }) => {
           />
             <Navbar />
           </div>
-          <div className="h-[calc(100vh-6rem)]">{children}</div>
+          <div
+          //  className="h-[calc(100vh-6rem)]"
+           >{children}</div>
         </div>
       </AnimatePresence>
     </>

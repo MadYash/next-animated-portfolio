@@ -48,7 +48,7 @@ const Contact = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[120vh] lg:h-full w-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-[120vh] lg:min-h-screen w-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:items-center">
         {/* Text Container */}
         <div className="h-1/3 lg:h-full lg:w-1/2 flex justify-center items-center text-4xl sm:text-6xl 2xl:text-[10rem] ">
           <div>
@@ -73,7 +73,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="h-2/3 lg:h-full lg:w-1/2 flex flex-col bg-red-50 rounded text-xl lg:gap-8 justify-center p-24 gap-4"
+          className="h-2/3  lg:w-1/2 flex flex-col bg-red-50 rounded text-xl lg:gap-8 justify-center p-8 gap-4"
         >
           <span>Dear Yash Dev,</span>
           <label htmlFor="user_message">
